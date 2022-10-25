@@ -7,9 +7,9 @@ local_settings.py
 #media
 venvs
 venv/
+app/secrets.json
 
 .DS_Store
-/app/config.py
 
 #.env
 .env
