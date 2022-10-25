@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>콜렉터</title>
+        <title>{{title}}</title>
         <link href="https://unpkg.com/mvp.css" rel="stylesheet" />
     </head>
     <style>
@@ -13,7 +13,7 @@
     </style>
     <body>
         <header>
-            <h1>콜렉터스 북북이</h1>
+            <h1>{{title}}</h1>
             <center>
                 <form id="search_form" action="/search">
                     <input
@@ -49,8 +49,6 @@
             </section>
 
             <hr />
-            {{books}}
-            <!--  -->
             {% else %}
             <center>
                 <h3 style="color: gray">Please Input Keyword...</h3>
