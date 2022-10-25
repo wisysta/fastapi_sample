@@ -21,7 +21,7 @@ async def root(request: Request):
         image="me.png",
         hhh="askljdlkas",
     )
-    print(await mongodb.engine.save(book))  # DB에 저장
+    # print(await mongodb.engine.save(book))
     return templates.TemplateResponse(
         "./index.html",
         {"request": request, "title": "콜렉터 북북이"},
@@ -29,8 +29,7 @@ async def root(request: Request):
 
 
 @app.get("/search", response_class=HTMLResponse)
-async def search(request: Request, s: str):
-    # print(q)
+async def search(request: Request, q: str):
     return templates.TemplateResponse(
         "./index.html",
         {"request": request, "title": "콜렉터 북북이"},
@@ -38,12 +37,16 @@ async def search(request: Request, s: str):
 
 
 @app.on_event("startup")
-def on_app_start():
-    """before app starts"""
-    mongodb.connect()
+async def on_app_start():
+    """
+    before app starts
+    """
+    await mongodb.connect()
 
 
 @app.on_event("shutdown")
-def on_app_shutdown():
-    """after app shutdown"""
-    mongodb.close()
+async def on_app_shutdown():
+    """
+    after app shutdown
+    """
+    await mongodb.close()

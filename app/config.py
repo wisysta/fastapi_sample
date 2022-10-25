@@ -21,6 +21,7 @@ def get_secret(
         raise EnvironmentError(f"Set the {key} environment variable.")
 
 
+
 if __name__ == "__main__":
     world = get_secret("hello")
     print(world)
