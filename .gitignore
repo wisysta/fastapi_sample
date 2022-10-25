@@ -1,0 +1,22 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+#db.sqlite3
+#media
+venvs
+venv/
+
+.DS_Store
+/app/config.py
+
+#.env
+.env
+#pem, ppk
+*.pem
+*.ppk
+
+#tar
+*.tar
+
